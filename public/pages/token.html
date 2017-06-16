@@ -1,0 +1,78 @@
+<div class="token-page" ng-init="Init();">
+	<header>
+		<div class="contenido">
+			<div class="col-xs-9 titulo">
+				<i class="fa fa-square" aria-hidden="true"></i> Autorizaciones
+			</div>
+			<div class="col-xs-3 icon-ellipsis">
+				<div class="dropdown">
+				    <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    	<i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+				    </button>
+				    <ul class="dropdown-menu" aria-labelledby="dLabel">
+				    	<!-- <li>Settings</li> -->
+				    	<li ng-click="logOut();">Salir</li>
+				    </ul>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="con-body">
+		<form class="frm_orden">
+			<div class="item">
+				<div class="input">
+					<span>Caduca en:&nbsp;<span class="tiempo">{{ tiempo.label }}</span></span>
+					<p id="temp_token">{{ Token }}</p>
+				</div>
+			</div>
+		</form>
+
+		<button class="btn-login" ng-click='GenerarOtro();'>
+			Generar otro
+		</button>
+
+		<!-- <input type="text" value="{{ Token }}" name="" > -->
+		<div class="col-xs-12"><br><br></div>
+		<div class="col-xs-3"></div>
+		<div class="col-xs-3 text-center">
+			<a href="mailto:?subject=Token&amp;body=Clave de Verificación: {{ Token }}" class="iconos" title="Share by Email"> <i class="fa fa-envelope-o" aria-hidden="true"></i> </a>
+			<br><span class="lable_share">Compartir por<br> email</span>
+		</div>
+
+		<div class="col-xs-3 text-center">
+			<a ng-click='copiarAlPortapapeles("temp_token");' class="iconos">
+				<i class="fa fa-clone" aria-hidden="true"></i>
+			</a>
+			<br><span class="lable_share">Copiar al portapapeles</span>
+		</div>
+
+		<div class="col-xs-3"></div>
+
+	</div>
+
+	<div class="legales"> <a href="javascript:;" data-toggle="modal" data-target="#myModal"> T&eacute;rminos y condiciones </a> </div>
+	<!-- <a href="#token"><i class="fa fa-shield"></i> Generar</a> | <a href="#/"><i class="fa fa-shield"></i> Salir</a> -->
+</div>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+	    <!-- Modal content-->
+	    <div class="modal-content">
+	        <div class="modal-header">
+	        	<button type="button" class="close" data-dismiss="modal">&times;</button>
+	        	<h4 class="modal-title">T&eacute;rminos y condiciones</h4>
+	        </div>
+	        <div class="modal-body">
+		        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in est pulvinar diam congue viverra. Integer fermentum dapibus sapien, id pulvinar ante suscipit non. Sed posuere eu est ut tempus. In dapibus elementum varius. Suspendisse hendrerit, lectus faucibus finibus mollis, lectus ligula tempor lectus, in malesuada massa lectus eget dolor. Sed at mi sit amet eros accumsan gravida. Proin pulvinar bibendum fringilla. Sed ut enim id elit varius fermentum. Nam non mi quis felis interdum bibendum. Sed tristique metus lacus, non euismod risus condimentum non. Praesent in pharetra diam, et venenatis libero. In urna lorem, sodales vel luctus non, blandit ac metus. Sed non nibh rutrum, scelerisque sapien vel, mattis mi.</p>
+
+			    <p>Curabitur non leo sit amet sapien euismod porttitor eget nec purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer blandit lobortis lectus. Vivamus porttitor nisi et odio pulvinar tempor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque auctor diam quis ullamcorper semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pellentesque sit amet ex eu faucibus. Proin facilisis vitae justo eu ultricies. Nunc pulvinar in diam eget interdum. Duis in ligula eu lorem vehicula porttitor. Donec ornare tincidunt dictum. Pellentesque varius faucibus viverra. Sed pulvinar, lectus sed scelerisque pretium, leo purus interdum eros, cursus fringilla tortor enim eget est. Etiam facilisis vulputate massa, at aliquam sem euismod sed. Ut augue augue, venenatis ullamcorper metus egestas, viverra fringilla ex.</p>
+
+			    <p>Donec pellentesque lacinia ante et tempor. Pellentesque at euismod ante. Nam imperdiet quam quis justo bibendum rhoncus. Phasellus pellentesque augue in orci imperdiet, quis finibus ex blandit. Ut ultricies nisi a velit finibus aliquet. Pellentesque feugiat dapibus nibh, vel posuere lorem. Aliquam molestie vel urna sit amet mattis. Vivamus id justo facilisis, porta purus et, porta augue. Nulla facilisi. Nulla in velit orci. Morbi at risus et purus dignissim sagittis. Nunc suscipit consectetur enim, at rhoncus est sagittis ut.</p>
+	        </div>
+	        <div class="modal-footer">
+	        	<button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+	        </div>
+	    </div>
+    </div>
+</div>

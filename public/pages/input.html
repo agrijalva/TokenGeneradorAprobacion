@@ -1,0 +1,180 @@
+<div class="input-page" ng-init="InputInit();">
+	<header>
+		<div class="contenido">
+			<div class="col-xs-9 titulo">
+				<i class="fa fa-square" aria-hidden="true"></i> Autorizaciones
+			</div>
+			<div class="col-xs-3 icon-ellipsis">
+				<div class="dropdown">
+				    <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    	<i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+				    </button>
+				    <ul class="dropdown-menu" aria-labelledby="dLabel">
+				    	<!-- <li>Settings</li> -->
+				    	<li ng-click="logOut();">Salir</li>
+				    </ul>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="con-body">
+		<form class="frm_orden">
+			<div class="item">
+				<div class="input">
+					<span>N&uacute;mero de Orden / Cotización</span>
+					<input type="text" class="numero_orden" ng-model="numero_orden" ng-keypress = "presEnter( $event );">
+				</div>
+			</div>
+		</form>
+
+		<button class="btn-login" ng-click='GetOrden();'>
+			Generar Token
+		</button>
+	</div>
+
+	<div class="legales"> <a href="javascript:;" data-toggle="modal" data-target="#myModal"> T&eacute;rminos y condiciones </a> </div>
+	<!-- <a href="#token"><i class="fa fa-shield"></i> Generar</a> | <a href="#/"><i class="fa fa-shield"></i> Salir</a> -->
+</div>
+
+<!-- Html para la calificación -->
+<div class="dialog-cal" ng-show = "calificacion">
+    <div class="dialog-cal-panel">
+        <div class="dialog-cal-panel-head">
+            <div class="panel-head-title">ESTA OPERACIÓN</div>
+            <div class="panel-head-subtitle"> Hoy {{ tiempo }} </div>
+        </div>
+        <div class="dialog-cal-panel-content">
+            <p class="peque">¿Cómo calificas esta operación?</p>
+
+            <form>
+              <p class="clasificacion">
+                <input id="radio1" ng-model = "estrellas" type="radio" name="estrellas" value="5">
+                    <label for="radio1"> <i class="fa fa-star" aria-hidden="true"></i> </label>
+                <input id="radio2" ng-model = "estrellas" type="radio" name="estrellas" value="4">
+                    <label for="radio2"> <i class="fa fa-star" aria-hidden="true"></i> </label>
+                <input id="radio3" ng-model = "estrellas" type="radio" name="estrellas" value="3">
+                    <label for="radio3"> <i class="fa fa-star" aria-hidden="true"></i> </label>
+                <input id="radio4" ng-model = "estrellas" type="radio" name="estrellas" value="2">
+                    <label for="radio4"> <i class="fa fa-star" aria-hidden="true"></i> </label>
+                <input id="radio5" ng-model = "estrellas" type="radio" name="estrellas" value="1">
+                    <label for="radio5"> <i class="fa fa-star" aria-hidden="true"></i> </label>
+              </p>
+            </form>
+
+            <textarea class="observaciones" placeholder="Escribe un comentario" ng-model = "comentarios"></textarea>
+
+            <div class="salioBien" ng-If=' estrellas > 0 && estrellas <= 4 '>
+                <div class="cal-titulo">¿Qué podemos mejorar?</div>
+
+                <div class="col-xs-6">
+                	<div id="ck-1">
+                        <label>
+                            <input type="checkbox" ng-model = "checkboxModel.kpi1" ng-true-value="{{KPI_id[0]}}" ng-false-value="0" ><span>{{ KPI_name[0] }} {{ kpi1 }}</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="col-xs-6">
+                	<div id="ck-2">
+                        <label>
+                            <input type="checkbox" ng-model = "checkboxModel.kpi2" ng-true-value="{{KPI_id[1]}}" ng-false-value="0" ><span>{{ KPI_name[1] }}</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="col-xs-6">
+                	<div id="ck-3">
+                        <label>
+                            <input type="checkbox" ng-model = "checkboxModel.kpi3" ng-true-value="{{KPI_id[2]}}" ng-false-value="0" ><span>{{ KPI_name[2] }}</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="col-xs-6">
+                	<div id="ck-4">
+                        <label>
+                            <input type="checkbox" ng-model = "checkboxModel.kpi4" ng-true-value="{{KPI_id[3]}}" ng-false-value="0" ><span>{{ KPI_name[3] }}</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="col-xs-3"> &nbsp; </div>
+                <div class="col-xs-6">
+                	<div id="ck-5">
+                        <label>
+                            <input type="checkbox" ng-model = "checkboxModel.kpi5" ng-true-value="{{KPI_id[4]}}" ng-false-value="0" ><span>{{ KPI_name[4] }}</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="salioMal" ng-If='estrellas > 4'>
+                <div class="cal-titulo">¿Qué salio bien?</div>
+
+                <div class="col-xs-6">
+                    <div id="ck-1">
+                        <label>
+                            <input type="checkbox" ng-model = "checkboxModel.kpi6" ng-true-value="{{KPI_id[5]}}" ng-false-value="0" ><span>{{ KPI_name[5] }}</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="col-xs-6">
+                    <div id="ck-2">
+                        <label>
+                            <input type="checkbox" ng-model = "checkboxModel.kpi7" ng-true-value="{{KPI_id[6]}}" ng-false-value="0" ><span>{{ KPI_name[6] }}</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="col-xs-6">
+                    <div id="ck-3">
+                        <label>
+                            <input type="checkbox" ng-model = "checkboxModel.kpi8" ng-true-value="{{KPI_id[7]}}" ng-false-value="0" ><span>{{ KPI_name[7] }}</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="col-xs-6">
+                    <div id="ck-4">
+                        <label>
+                            <input type="checkbox" ng-model = "checkboxModel.kpi9" ng-true-value="{{KPI_id[8]}}" ng-false-value="0" ><span>{{ KPI_name[8] }}</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="col-xs-3"> &nbsp; </div>
+                <div class="col-xs-6">
+                    <div id="ck-5">
+                        <label>
+                            <input type="checkbox" ng-model = "checkboxModel.kpi10" ng-true-value="{{KPI_id[9]}}" ng-false-value="0" ><span>{{ KPI_name[9] }}</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dialog-cal-panel-footer">
+            <button class="botonamarillo" ng-click="GuardarCalificacion();" >ENVIAR CALIFICACIÓN</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+	    <!-- Modal content-->
+	    <div class="modal-content">
+	        <div class="modal-header">
+	        	<button type="button" class="close" data-dismiss="modal">&times;</button>
+	        	<h4 class="modal-title">T&eacute;rminos y condiciones</h4>
+	        </div>
+	        <div class="modal-body">
+		        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in est pulvinar diam congue viverra. Integer fermentum dapibus sapien, id pulvinar ante suscipit non. Sed posuere eu est ut tempus. In dapibus elementum varius. Suspendisse hendrerit, lectus faucibus finibus mollis, lectus ligula tempor lectus, in malesuada massa lectus eget dolor. Sed at mi sit amet eros accumsan gravida. Proin pulvinar bibendum fringilla. Sed ut enim id elit varius fermentum. Nam non mi quis felis interdum bibendum. Sed tristique metus lacus, non euismod risus condimentum non. Praesent in pharetra diam, et venenatis libero. In urna lorem, sodales vel luctus non, blandit ac metus. Sed non nibh rutrum, scelerisque sapien vel, mattis mi.</p>
+
+			    <p>Curabitur non leo sit amet sapien euismod porttitor eget nec purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer blandit lobortis lectus. Vivamus porttitor nisi et odio pulvinar tempor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque auctor diam quis ullamcorper semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pellentesque sit amet ex eu faucibus. Proin facilisis vitae justo eu ultricies. Nunc pulvinar in diam eget interdum. Duis in ligula eu lorem vehicula porttitor. Donec ornare tincidunt dictum. Pellentesque varius faucibus viverra. Sed pulvinar, lectus sed scelerisque pretium, leo purus interdum eros, cursus fringilla tortor enim eget est. Etiam facilisis vulputate massa, at aliquam sem euismod sed. Ut augue augue, venenatis ullamcorper metus egestas, viverra fringilla ex.</p>
+
+			    <p>Donec pellentesque lacinia ante et tempor. Pellentesque at euismod ante. Nam imperdiet quam quis justo bibendum rhoncus. Phasellus pellentesque augue in orci imperdiet, quis finibus ex blandit. Ut ultricies nisi a velit finibus aliquet. Pellentesque feugiat dapibus nibh, vel posuere lorem. Aliquam molestie vel urna sit amet mattis. Vivamus id justo facilisis, porta purus et, porta augue. Nulla facilisi. Nulla in velit orci. Morbi at risus et purus dignissim sagittis. Nunc suscipit consectetur enim, at rhoncus est sagittis ut.</p>
+	        </div>
+	        <div class="modal-footer">
+	        	<button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+	        </div>
+	    </div>
+    </div>
+</div>

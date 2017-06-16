@@ -1,0 +1,531 @@
+header{
+	background-color: #314659;
+	height: 50px;
+}
+
+header .contenido{
+	width: 640px;
+	height: 100%;
+	margin: 0 auto;
+}
+
+header .contenido .titulo{
+	color: white;
+	font-size: 20px;
+	padding-top: 10px;
+	text-align: left;
+}
+
+header .contenido .icon-ellipsis{
+	color: white;
+	font-size: 20px;
+	padding-top: 10px;
+	text-align: right;
+}
+
+.input-page .con-body{
+	width: 600px;
+	margin: 0 auto;
+}
+
+.input-page .frm_orden{
+	padding-top: 60px;
+}
+
+.input-page .item{
+	border-bottom: solid 1px #edbf57;
+	overflow: hidden;
+	margin-bottom: 15px;
+}
+
+.input-page .item .label{
+	float: left;
+	font-size: 13px;
+}
+
+.input-page .item .input{
+	float: left;
+	font-size: 13px;
+	width: 100%;
+}
+
+.input-page .item .input i{
+	color: white;
+	font-size: 20px;
+}
+
+.input-page .item .input i.fa-lock{
+	font-size: 25px;
+}
+
+.input-page label{
+	color: white;
+	font-weight: normal;
+}
+
+.input-page input{
+	border-radius: 0 !important;
+	background-color: transparent;
+	border:none;
+	box-shadow: 0 0 0 transparent;
+	color: #333;
+	padding: 20px 20px 10px 5px;
+	font-size: 40px;
+	font-family: 'Roboto', sans-serif;
+	width: 100%;
+	text-align: center;
+}
+
+.input-page input:focus{
+    outline: none !important;
+    box-shadow: 0 0 0 transparent;
+    border:0px solid rgba(0,0,255,0.8);
+}
+
+.input-page input::placeholder{
+    color: #edbf57; /*#edbf57*/
+    font-family: 'Roboto Thin', sans-serif;
+}
+
+.input-page .input span{
+	font-family: 'Roboto', sans-serif;
+}
+
+.input-page .btn-login{
+	background-color: #edbf57;
+	border:solid 1px #edbf57;
+	color: white;
+	width: 100%;
+	padding: 10px 0;
+	font-family: 'Roboto', sans-serif;
+	margin-top: 20px;
+	font-size: 16px;
+}
+
+.input-page .legales a{
+	color: #333;
+	font-size: 12px;
+	position: absolute;
+	bottom: 10px;
+	width: 140px;
+	text-align: center;
+	left: 50%;
+	margin-left: -70px;
+	font-family: 'Roboto', sans-serif;
+}
+
+.dropdown button{
+	background-color: transparent;
+	border:none;
+	color: white;
+}
+
+.dropdown-menu{
+	left: -30px;
+}
+
+.dropdown-menu li{
+	color: black;
+	font-family: 'Roboto', sans-serif;
+	padding: 5px 10px;
+	text-align: left;
+	cursor: pointer;
+}
+
+.dropdown-menu li:hover{
+	background-color: #f4f4f4;
+}
+
+@media screen and (max-width: 360px) {
+    .dialog-cal-panel{
+        width: 100% !important;
+        margin-left: 0px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+	header .contenido{
+		width: 100% !important;
+	}
+
+	.input-page .con-body{
+		width: 100% !important;
+		padding: 10px;
+	}
+}
+
+/* Reglas de Dialog Cal*/
+.dialog-cal{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1024;
+    font-family: 'Roboto', sans-serif;
+}
+
+.dialog-cal-panel{
+    background-color: white;
+    width: 330px;
+    height: 500px;
+    margin-left: calc( 50% - 165px);
+    border-radius: 5px;
+    overflow: hidden;
+
+    -webkit-box-shadow: 1px 1px 5px -1px rgba(0,0,0,0.43);
+    -moz-box-shadow: 1px 1px 5px -1px rgba(0,0,0,0.43);
+    box-shadow: 1px 1px 5px -1px rgba(0,0,0,0.43);
+
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+
+    /*@media screen and (max-height: $break-small-height) {
+        height: 95%;   
+    }*/
+}
+
+.dialog-cal-panel-head{
+    border-bottom: solid 1px #f4f4f4;
+    height: 53px;
+    padding-left: 15px;
+    /*text-align: center !important;*/
+}
+
+.panel-head-title{
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 7px;
+    overflow: hidden;
+}
+
+.panel-head-subtitle{
+    font-size: 12px;
+    color: #666;
+}
+
+.dialog-cal-panel-content{
+    height: calc(100% - 130px);
+
+    /*@media screen and (max-height: $break-min-height) {
+        overflow-y: auto; 
+    }*/
+}
+
+.botonamarillo{
+	background-color: #edbf57;
+	border:none;
+	color: white;
+	height: 100%;
+	width: 100%;
+	font-size: 16px;
+    /*@media screen and (max-height: $break-min-height) {
+        background-color: #edbf57; 
+    }*/
+}
+
+.peque{
+    font-size: 12px;
+    color: #666;
+    padding-left: 15px;
+    margin-bottom: 20px;
+
+    /*@media screen and (max-height: $break-small-height) {
+        margin-bottom: 10px;
+    }*/
+}
+
+.observaciones{
+    border: none;
+    border-top: solid 1px #f4f4f4;
+    border-bottom: solid 1px #f4f4f4;
+    width: 100%;
+    padding: 15px;
+    margin-top: 25px;
+    resize: none;
+
+    /*observaciones*/
+    /*@media screen and (max-height: $break-small-height) {
+        margin-top: 10px;
+    }*/
+}
+
+.observaciones:focus{
+    outline: none !important;
+    box-shadow: 0 0 0 transparent;
+}
+
+.salioBien, .salioMal{
+    margin-top: 15px;
+}
+
+.cal-titulo{
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+}
+
+.center{
+    text-align: center;
+}
+
+.dialog-cal-panel-footer{
+    overflow: hidden;
+    background-color: #edbf57;
+    height: 70px !important;
+
+    /*.dialog-cal-panel-footer*/
+    /*@media screen and (max-height: $break-min-height) {
+        height: 70px !important;
+    }*/
+}
+
+.dialog-cal-panel-footer [col-6] {
+    padding: 0 !important;
+}
+
+.dialog-cal-panel-footer .col{
+    padding: 0 !important;
+}
+
+.dialog-cal-panel-footer .grid{
+    padding: 0 !important;
+}
+
+.dialog-cal-panel-footer .button-md{
+    box-shadow: none !important;
+    height: 60px;
+    margin: 0 !important;
+}
+
+/* Reglas para estrellas*/
+#form {
+    width: 250px;
+    margin: 0 auto;
+    height: 50px;
+}
+
+#form p {
+    text-align: center;
+}
+
+#form label {
+    font-size: 20px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.clasificacion label {
+    color: #999;
+    font-size: 35px;
+    margin-left: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.clasificacion {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    width: 229px;
+    margin: 0 auto;
+
+    /*@media screen and (max-width: $break-small-width) {
+        width: 90%;
+    }*/
+}
+
+label:hover,
+label:hover ~ label {
+    color: orange;
+}
+
+input[type="radio"]:checked ~ label {
+    color: orange;
+}
+/* Reglas para estrellas*/
+/* /-Reglas de Dialog Cal*/
+
+#ck-1 {
+    margin:4px;
+    background-color:#f4f4f4;
+    border-radius: 0px;
+    overflow:auto;
+    float:left;
+    width: 100%;
+    text-align:center;
+}
+
+#ck-1 label {
+    float:left;
+    width:100%;
+    cursor: pointer;
+}
+
+#ck-1 label span {
+    text-align:center;
+    padding:5px 0px 2px 0px;
+    display:block;
+    font-size: 13px;
+    color: #333;
+}
+
+#ck-1 label input {
+    position:absolute;
+    top:-20px;
+    visibility: hidden;
+}
+
+#ck-1 input:checked + span {
+    background-color:orange;
+    color:#fff;
+}
+
+/* - 2*/
+#ck-2 {
+    margin:4px;
+    background-color:#f4f4f4;
+    border-radius: 0px;
+    overflow:auto;
+    float:left;
+    width: 100%;
+    text-align:center;
+}
+
+#ck-2 label {
+    float:left;
+    width:100%;
+    cursor: pointer;
+}
+
+#ck-2 label span {
+    text-align:center;
+    padding:5px 0px 2px 0px;
+    display:block;
+    font-size: 13px;
+    color: #333;
+}
+
+#ck-2 label input {
+    position:absolute;
+    top:-20px;
+    visibility: hidden;
+}
+
+#ck-2 input:checked + span {
+    background-color:orange;
+    color:#fff;
+}
+
+/* - 3*/
+#ck-3 {
+    margin:4px;
+    background-color:#f4f4f4;
+    border-radius: 0px;
+    overflow:auto;
+    float:left;
+    width: 100%;
+    text-align:center;
+}
+
+#ck-3 label {
+    float:left;
+    width:100%;
+    cursor: pointer;
+}
+
+#ck-3 label span {
+    text-align:center;
+    padding:5px 0px 2px 0px;
+    display:block;
+    font-size: 13px;
+    color: #333;
+}
+
+#ck-3 label input {
+    position:absolute;
+    top:-20px;
+    visibility: hidden;
+}
+
+#ck-3 input:checked + span {
+    background-color:orange;
+    color:#fff;
+}
+
+/* - 4*/
+#ck-4 {
+    margin:4px;
+    background-color:#f4f4f4;
+    border-radius: 0px;
+    overflow:auto;
+    float:left;
+    width: 100%;
+    text-align:center;
+}
+
+#ck-4 label {
+    float:left;
+    width:100%;
+    cursor: pointer;
+}
+
+#ck-4 label span {
+    text-align:center;
+    padding:5px 0px 2px 0px;
+    display:block;
+    font-size: 13px;
+    color: #333;
+}
+
+#ck-4 label input {
+    position:absolute;
+    top:-20px;
+    visibility: hidden;
+}
+
+#ck-4 input:checked + span {
+    background-color:orange;
+    color:#fff;
+}
+
+/* - 5*/
+#ck-5 {
+    margin:4px;
+    background-color:#f4f4f4;
+    border-radius: 0px;
+    overflow:auto;
+    float:left;
+    width: 100%;
+    text-align:center;
+}
+
+#ck-5 label {
+    float:left;
+    width:100%;
+    cursor: pointer;
+}
+
+#ck-5 label span {
+    text-align:center;
+    padding:5px 0px 2px 0px;
+    display:block;
+    font-size: 13px;
+    color: #333;
+}
+
+#ck-5 label input {
+    position:absolute;
+    top:-20px;
+    visibility: hidden;
+}
+
+#ck-5 input:checked + span {
+    background-color:orange;
+    color:#fff;
+}

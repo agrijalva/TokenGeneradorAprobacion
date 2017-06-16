@@ -1,0 +1,39 @@
+@font-face {
+    font-family: "Roboto";
+    src: url(../fonts/Roboto/Roboto-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Roboto Thin";
+    src: url(../fonts/Roboto/Roboto-Thin.ttf) format("truetype");
+}
+
+body{
+	width: 100%;
+	height: 100%;
+	font-family: 'Roboto Thin', sans-serif;
+}
+
+.fondoImg{
+	background-color: #314659;
+	background-image: url(../images/fondo1.png);
+}
+
+.fondoColor{
+	background-color: #f4f4f4;
+	background-image: none;
+}
+
+.modal-header{
+	background-color: #212d3b;
+	color: white;
+	font-weight: bold;
+}
+.modal-body{
+	text-align: justify;
+	font-family: sans-serif;
+}
+
+
+.bg-loading { background-color: white !important; border:solid 1px white !important;  }
+.loading {color: #edbf57; font-size: 12px }
