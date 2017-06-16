@@ -31,8 +31,8 @@ scotchApp.config(function($routeProvider) {
 		}
 });
 
-var _URL = 'http://localhost:5300/api/mobile/';
-// var _URL = 'http://192.168.20.9:5300/api/mobile/';
+//var _URL = 'http://localhost:5300/api/mobile/';
+var _URL = 'http://192.168.20.9:5300/api/mobile/';
 
 // Funcion para cargar el loading en los botones
 var contenido = '';
