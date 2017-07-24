@@ -1,11 +1,11 @@
 .login-page .contenido{
-	width: 600px;
+	width: 700px;
 	height: 350px;
 	margin: 0 auto;
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-left: -300px;
+    margin-left: -350px;
     -ms-transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
