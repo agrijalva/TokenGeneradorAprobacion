@@ -41,7 +41,23 @@ scotchApp.controller('inputController', function($scope, $http) {
 	var _orden = [];
 	$scope.GetOrden = function(){ // 03-1633010407005-000113-1
 		var _orden 		 = $scope.numero_orden.split('-');
-		var orden 		 = _orden[0] + "-" + _orden[1] + "-" +_orden[2];
+
+		switch( _orden.length ){
+			case 1: // El bloque corresponde a una orden de la version 1
+				var orden = $scope.numero_orden 
+				break;
+			case 2: // El bloque corresponde a una cotizacion de la version 1
+				var orden = _orden[0] 
+				break;
+			case 3: // El bloque corresponde a una orden de la version 2
+				var orden = $scope.numero_orden 
+				break;
+			case 4: // El bloque corresponde a una cotizacion de la version 2
+				var orden = _orden[0] + "-" + _orden[1] + "-" +_orden[2];
+				break;
+		}
+
+		
 		var idCotizacion = 0;
 		// localStorage.getItem( Usuario_Id );
 		showLoading( ".btn-login" );

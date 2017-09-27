@@ -31,7 +31,7 @@ scotchApp.config(function($routeProvider) {
 		}
 });
 
-var _URL = 'http://192.168.0.177:5200/api/mobile/';
+var _URL = 'http://189.204.141.193:5100/api/mobile/';
 // var _URL = 'http://localhost:5200/api/mobile/';
 // var _URL = 'http://192.168.20.9:5300/api/mobile/';
 
