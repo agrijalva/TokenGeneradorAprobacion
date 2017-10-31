@@ -108,6 +108,7 @@ scotchApp.controller('inputController', function($scope, $http) {
                                 }
                                 else{
                                     swal( 'Autorizaciones Utilidad', 'No cuenta con los privilegios necesarios para realizar el Token. (Debes ser administrador)' );
+                                    hideLoading();
                                 }
                             }
                         else if( data.idEstatusOrden == 4 || data.idEstatusOrden == 5 ){ // ( Administrador )}
@@ -130,6 +131,15 @@ scotchApp.controller('inputController', function($scope, $http) {
                             }
                         }
                         else if( data.idEstatusOrden == 7 ){ // ( Cliente )
+                            if( parseInt( localStorage.getItem( "Usuario_Tipo" ) ) == 1 ){ // Generar Token
+                                SaveToken = true;
+                            }
+                            else{
+                                swal( 'Autorizaciones', 'No cuenta con los privilegios necesarios para realizar el Token.( Eres administrador )' );
+                                hideLoading();
+                            }
+                        }
+                        else if( data.idEstatusOrden == 8 ){ // ( Cliente / Segundo Token )
                             if( parseInt( localStorage.getItem( "Usuario_Tipo" ) ) == 1 ){ // Generar Token
                                 SaveToken = true;
                             }
